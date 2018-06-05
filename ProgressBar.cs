@@ -4,7 +4,6 @@ namespace ConsoleProgressBar
 {
     public class ProgressBar
     {
-        #region Const/readonly fields
         // Consts for basic default values
         private const string DEFAULT_LABEL = "";
         private const Options DEFAULT_OPTIONS = Options.Bookend | Options.DisplayPercentage;
@@ -28,9 +27,7 @@ namespace ConsoleProgressBar
         /// Number of increments on the progress bar
         /// </summary>
         private readonly int _size;
-        #endregion
-
-        #region Other fields
+        
         /// <summary>
         /// Running counter for num hash marks/increments drawn on the bar
         /// </summary>
@@ -67,9 +64,8 @@ namespace ConsoleProgressBar
         /// Running cursor position Y coordinate of where the next hash mark/increment should be drawn on the progress bar
         /// </summary>
         private int _progBarToDrawPosY = -1;
-        #endregion
 
-        #region Trivial properties
+
         /// <summary>
         /// Indicates whether or not the progress bar has completed
         /// </summary>
@@ -78,9 +74,8 @@ namespace ConsoleProgressBar
         /// Running counter of percent complete used to drive the progress bar
         /// </summary>
         public uint PercentComplete { get; private set; }
-        #endregion
 
-        #region Constructors
+
         /// <summary>
         /// Default constructor. Initializes values and writes initialized progress bar to the console.
         /// </summary>
@@ -171,9 +166,7 @@ namespace ConsoleProgressBar
             // Initialize the progress bar with the number of ticks indicated
             Tick((int)initPercentage);
         }
-        #endregion
 
-        #region Enums
         /// <summary>
         /// Options to control visual appearance of the progress bar
         /// </summary>
@@ -205,9 +198,7 @@ namespace ConsoleProgressBar
             /// </summary>
             HideCursor = 32
         }
-        #endregion
 
-        #region Public methods
         /// <summary>
         /// Increments PercentComplete by 1 and updates the progress bar accordingly
         /// </summary>
@@ -236,9 +227,8 @@ namespace ConsoleProgressBar
                 Tick();
             }
         }
-        #endregion
 
-        #region Private methods
+
         /// <summary>
         /// Writes the initialized state of the progress bar to the console and prepares cursor
         /// </summary>
@@ -359,6 +349,5 @@ namespace ConsoleProgressBar
                 Console.CursorVisible = true;
             }
         }
-        #endregion
     }
 }
